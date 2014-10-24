@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Angular on Fire!</title>
+    <link rel="stylesheet" href="../bower_components/angular-material/angular-material.min.css">
+    <link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./index.css">
+</head>
+<body ng-app="angularOnFire" ng-controller="indexController">
+<div layout="vertical">
+    <md-toolbar class="header">
+        <div class="md-toolbar-tools">
+            <span>Home</span>
+            <span flex></span>
+        </div>
+    </md-toolbar>
+</div>
+<div layout="horizontal" layout-padding layout-align="center">
+    <md-content flex layout="vertical">
+        <md-subheader class="md-subheader-colored content__header">
+            Current Performers
+        </md-subheader>
+        <md-list >
+            <md-item ng-repeat="performer in performers">
+                <div class="md-tile-content">
+                    <performer-directive ng-model="performer"></performer-directive>
+                </div>
+            </md-item>
+        </md-list>
+    </md-content>
+
+    <md-content flex layout-align="center center">
+        <md-subheader class="md-subheader-colored ">
+            Add new Performer
+        </md-subheader>
+        <form name="performerDetails" style="padding: 20px;">
+            <md-text-float name="title" label="Title" ng-model="newPerformer.title" required></md-text-float>
+            <md-text-float name="forename" label="Forename" ng-model="newPerformer.forename" required></md-text-float>
+            <md-text-float name="surname" label="Surname" ng-model="newPerformer.surname" required></md-text-float>
+            <md-button class="md-theme-green" ng-disabled="performerDetails.$invalid" ng-click="addPerformer()">Save</md-button>
+        </form>
+
+    </md-content>
+</div>
+
+
+
+<script src="../bower_components/angular/angular.min.js"></script>
+<script src="../bower_components/angular-aria/angular-aria.min.js"></script>
+<script src="../bower_components/angular-animate/angular-animate.min.js"></script>
+<script src="../bower_components/hammerjs/hammer.min.js"></script>
+<script src="../bower_components/angular-material/angular-material.min.js"></script>
+<script type="text/javascript" src="../bower_components/firebase/firebase.js"></script>
+<script type="text/javascript" src="../bower_components/angularfire/dist/angularfire.min.js"></script>
+
+<script type="text/javascript" src="./app.js"></script>
+<script type="text/javascript" src="./performer-directive.js"></script>
+<script type="text/javascript" src="./fireBase-service.js"></script>
+
+</body>
+</html>

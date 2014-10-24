@@ -1,0 +1,16 @@
+<div>
+    <div ng-if="!selected" layout="horizontal" >
+        <span flex="66">{{performer.title}} {{performer.forename}} {{performer.surname}}</span>
+        <span flex="5" ng-click="edit()"><i class="glyphicon glyphicon-pencil"></i></span>
+        <span flex="5" ng-click="delete()"><i class="glyphicon glyphicon-remove"></i></span>
+    </div>
+    <div ng-if="selected" layout="horizontal" layout-align="space-between">
+        <md-text-float flex="15" label="Title" ng-model="performer.title"></md-text-float>
+        <md-text-float flex="25" label="Forename" ng-model="performer.forename"></md-text-float>
+        <md-text-float flex="25" label="Surname" ng-model="performer.surname"></md-text-float>
+        <span>
+            <md-button class="md-theme-green" ng-click="updatePerformer()">Update</md-button>
+        </span>
+
+    </div>
+</div>
