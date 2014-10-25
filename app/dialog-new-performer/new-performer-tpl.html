@@ -1,0 +1,17 @@
+<md-dialog layout="vertical">
+	<md-toolbar class="md-theme-dark">
+		<h2 class="md-toolbar-tools">New Performer</h2>
+	</md-toolbar>
+	<md-content>
+        <form name="performerDetails" style="padding: 20px;">
+            <md-text-float name="title" label="Title" ng-model="newPerformer.title" required></md-text-float>
+            <md-text-float name="forename" label="Forename" ng-model="newPerformer.forename" required></md-text-float>
+            <md-text-float name="surname" label="Surname" ng-model="newPerformer.surname" required></md-text-float>
+        </form>
+    </md-content>
+    <div class="dialog-actions">
+    	<span flex></span>
+    	<md-button class="md-theme-green" ng-click="add(newPerformer)" ng-disabled="performerDetails.$invalid">Save</md-button>
+    	<md-button class="md-theme-blue" ng-click="cancel()">Cancel</md-button>
+    </div>
+</md-dialog>

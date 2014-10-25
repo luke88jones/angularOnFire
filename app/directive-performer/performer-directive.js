@@ -7,7 +7,7 @@ angular.module("angularOnFire")
             scope: {
                 performer: "=ngModel"
             },
-            templateUrl: "./performer-template.html",
+            templateUrl: "../directive-performer/performer-template.html",
             link: function(scope, element, attrs) {
                 var originalPerformer = angular.copy(scope.performer);
 
